@@ -48,8 +48,7 @@ public partial class MainForm : Form
         int tag = (int)(sender as LinkLabel).Tag;
         using (var context = new ApplicationContext())
         {
-            string phone = context.Contacts.First(c => c.Id == tag).Phone;
-            ContactInfo contactInfo = new ContactInfo();
+            ContactInfo contactInfo = new ContactInfo(tag);
             contactInfo.ShowDialog();
         }
     }
