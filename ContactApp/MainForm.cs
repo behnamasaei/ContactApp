@@ -25,12 +25,19 @@ public partial class MainForm : Form
                 label.Margin = new Padding(5, 5, 5, 5);
                 label.Padding = new Padding(5, 5, 5, 5);
                 label.AutoSize = true;
-                label.BorderStyle = BorderStyle.FixedSingle;
+               // label.BorderStyle = BorderStyle.FixedSingle;
                 label.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
                 label.Font = new Font("Arial", 13);
 
+                // Check box
+                CheckBox checkBox = new CheckBox();
+                checkBox.Tag = contact.Id;
+                checkBox.Margin = new Padding(0,10,0,0);
+
                 flpMainContact.Controls.Add(label);
-                flpMainContact.SetFlowBreak(label, true);
+                flpMainContact.Controls.Add(checkBox);
+
+                flpMainContact.SetFlowBreak(checkBox, true);
             }
             
         }
@@ -38,7 +45,13 @@ public partial class MainForm : Form
 
     private void LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-        
+        int tag = (int)(sender as LinkLabel).Tag;
+        using (var context = new ApplicationContext())
+        {
+            string phone = context.Contacts.First(c => c.Id == tag).Phone;
+            ContactInfo contactInfo = new ContactInfo();
+            contactInfo.ShowDialog();
+        }
     }
 
 }
