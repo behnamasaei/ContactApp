@@ -1,5 +1,5 @@
 using ContactApp.Data;
-using ApplicationContext = ContactApp.Data.ApplicationContext;
+
 
 namespace ContactApp
 {

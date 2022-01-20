@@ -36,7 +36,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpMainContact = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -120,20 +120,20 @@
             this.textBox1.Size = new System.Drawing.Size(292, 23);
             this.textBox1.TabIndex = 0;
             // 
-            // flowLayoutPanel1
+            // flpMainContact
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 54);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(433, 384);
-            this.flowLayoutPanel1.TabIndex = 2;
+            this.flpMainContact.AutoScroll = true;
+            this.flpMainContact.Location = new System.Drawing.Point(12, 54);
+            this.flpMainContact.Name = "flpMainContact";
+            this.flpMainContact.Size = new System.Drawing.Size(433, 384);
+            this.flpMainContact.TabIndex = 2;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(457, 500);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.flpMainContact);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -142,6 +142,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -159,7 +160,7 @@
         private Button btnSearch;
         private Panel panel3;
         private TextBox textBox1;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel flpMainContact;
         private Button button3;
         private Button button4;
     }
