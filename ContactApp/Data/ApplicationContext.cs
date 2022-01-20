@@ -8,7 +8,9 @@ public class ApplicationContext : DbContext
     public DbSet<ContactData> Contacts { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlite(@"Data Source=C:\Users\behna\Desktop\ContactDB.db;");
+        string projectDirectory = Directory.GetCurrentDirectory();
+        string pathDb = Path.Combine(projectDirectory, "ContactDB.db");
+        optionsBuilder.UseSqlite($"Data Source={pathDb};");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
