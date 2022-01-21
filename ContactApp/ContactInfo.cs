@@ -85,24 +85,33 @@ public partial class ContactInfo : Form
     {
         ReadOnlyControllers(true);
 
-        using (var context = new ApplicationContext())
+        try
         {
-            var dataContact = new ContactData
+            using (var context = new ApplicationContext())
             {
-                Id = _tag,
-                Name = tbName.Text,
-                Family = tbFamily.Text,
-                Phone = tbPhone.Text,
-                Email = tbEmail.Text,
-                Address = tbAddress.Text,
-                Description = tbDescription.Text
-            };
+                var dataContact = new ContactData
+                {
+                    Id = _tag,
+                    Name = tbName.Text,
+                    Family = tbFamily.Text,
+                    Phone = tbPhone.Text,
+                    Email = tbEmail.Text,
+                    Address = tbAddress.Text,
+                    Description = tbDescription.Text
+                };
 
-            context.Update(dataContact);
-            context.SaveChanges();
+                context.Contacts.Update(dataContact);
+                context.SaveChanges();
 
-            MessageBox.Show("Saved !");
+                MessageBox.Show("Saved !");
+            }
         }
+        catch (Exception)
+        {
+            MessageBox.Show("Error");
+        }
+
+       
     }
 }
 

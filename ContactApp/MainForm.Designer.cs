@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbSearch = new System.Windows.Forms.TextBox();
             this.flpMainContact = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -47,31 +47,32 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.btnDelete);
+            this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Location = new System.Drawing.Point(12, 444);
             this.panel1.Margin = new System.Windows.Forms.Padding(10);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(433, 46);
             this.panel1.TabIndex = 0;
             // 
-            // button4
+            // btnDelete
             // 
-            this.button4.Location = new System.Drawing.Point(330, 6);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 31);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(330, 6);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 31);
+            this.btnDelete.TabIndex = 1;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // button3
+            // btnAdd
             // 
-            this.button3.Location = new System.Drawing.Point(29, 6);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 31);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(29, 6);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 31);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -102,23 +103,24 @@
             this.btnSearch.TabIndex = 0;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.tbSearch);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(337, 48);
             this.panel3.TabIndex = 0;
             // 
-            // textBox1
+            // tbSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(36, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(292, 23);
-            this.textBox1.TabIndex = 0;
+            this.tbSearch.Location = new System.Drawing.Point(36, 12);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(292, 23);
+            this.tbSearch.TabIndex = 0;
             // 
             // flpMainContact
             // 
@@ -159,9 +161,9 @@
         private Panel panel4;
         private Button btnSearch;
         private Panel panel3;
-        private TextBox textBox1;
+        private TextBox tbSearch;
         private FlowLayoutPanel flpMainContact;
-        private Button button3;
-        private Button button4;
+        private Button btnAdd;
+        private Button btnDelete;
     }
 }
