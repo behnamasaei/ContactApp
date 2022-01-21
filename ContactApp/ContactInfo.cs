@@ -28,7 +28,7 @@ public partial class ContactInfo : Form
             this.tbDescription.ReadOnly = true;
             this.btnCancel.Visible = false;
             this.btnSave.Visible = false;
-            this.btnDeleteContact.Visible = false;
+            this.btnDeleteContact.Visible = true;
             this.btnEdit.Visible = true;
         }
         if (!visible)
@@ -41,7 +41,7 @@ public partial class ContactInfo : Form
             this.tbDescription.ReadOnly = false;
             this.btnCancel.Visible = true;
             this.btnSave.Visible = true;
-            this.btnDeleteContact.Visible = true;
+            this.btnDeleteContact.Visible = false;
             this.btnEdit.Visible = false;
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace ContactApp
 {
-    partial class ContactInfo
+    partial class NewContact
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.tbDescription = new System.Windows.Forms.TextBox();
@@ -44,14 +43,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnDeleteContact = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnDeleteContact);
-            this.groupBox1.Controls.Add(this.btnEdit);
             this.groupBox1.Controls.Add(this.btnSave);
             this.groupBox1.Controls.Add(this.btnCancel);
             this.groupBox1.Controls.Add(this.tbDescription);
@@ -69,23 +65,13 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(382, 363);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Information";
             // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(289, 323);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 14;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(208, 323);
+            this.btnSave.Location = new System.Drawing.Point(289, 323);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 13;
@@ -95,7 +81,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(46, 323);
+            this.btnCancel.Location = new System.Drawing.Point(208, 323);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 12;
@@ -143,7 +129,6 @@
             // 
             this.tbName.Location = new System.Drawing.Point(126, 34);
             this.tbName.Name = "tbName";
-            this.tbName.ReadOnly = true;
             this.tbName.Size = new System.Drawing.Size(238, 23);
             this.tbName.TabIndex = 6;
             // 
@@ -207,28 +192,18 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Name: ";
             // 
-            // btnDeleteContact
-            // 
-            this.btnDeleteContact.Location = new System.Drawing.Point(127, 323);
-            this.btnDeleteContact.Name = "btnDeleteContact";
-            this.btnDeleteContact.Size = new System.Drawing.Size(75, 23);
-            this.btnDeleteContact.TabIndex = 15;
-            this.btnDeleteContact.Text = "Delete";
-            this.btnDeleteContact.UseVisualStyleBackColor = true;
-            this.btnDeleteContact.Click += new System.EventHandler(this.btnDeleteContact_Click);
-            // 
-            // ContactInfo
+            // NewContact
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(406, 387);
+            this.ClientSize = new System.Drawing.Size(408, 383);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "ContactInfo";
+            this.Name = "NewContact";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "ContactInfo";
+            this.Text = "NewContact";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -238,21 +213,19 @@
         #endregion
 
         private GroupBox groupBox1;
+        private Button btnSave;
+        private Button btnCancel;
+        private TextBox tbDescription;
+        private TextBox tbAddress;
+        private TextBox tbEmail;
+        private TextBox tbPhone;
+        private TextBox tbFamily;
+        private TextBox tbName;
+        private Label label6;
+        private Label label5;
+        private Label label4;
+        private Label label3;
         private Label label2;
         private Label label1;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private TextBox tbName;
-        private TextBox tbFamily;
-        private TextBox tbPhone;
-        private TextBox tbEmail;
-        private TextBox tbAddress;
-        private TextBox tbDescription;
-        private Button btnCancel;
-        private Button btnSave;
-        private Button btnEdit;
-        private Button btnDeleteContact;
     }
 }
