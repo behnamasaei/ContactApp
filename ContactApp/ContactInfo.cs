@@ -28,6 +28,7 @@ public partial class ContactInfo : Form
             this.tbDescription.ReadOnly = true;
             this.btnCancel.Visible = false;
             this.btnSave.Visible = false;
+            this.btnDeleteContact.Visible = false;
             this.btnEdit.Visible = true;
         }
         if (!visible)
@@ -40,6 +41,7 @@ public partial class ContactInfo : Form
             this.tbDescription.ReadOnly = false;
             this.btnCancel.Visible = true;
             this.btnSave.Visible = true;
+            this.btnDeleteContact.Visible = true;
             this.btnEdit.Visible = false;
         }
     }
@@ -48,8 +50,8 @@ public partial class ContactInfo : Form
     {
         using (var context = new ApplicationContext())
         {
-            var dataContact = context.Contacts.FirstOrDefault(c=>c.Id == _tag);
-            
+            var dataContact = context.Contacts.FirstOrDefault(c => c.Id == _tag);
+
             tbName.Text = dataContact.Name;
             tbFamily.Text = dataContact.Family;
             tbPhone.Text = dataContact.Phone;
@@ -111,7 +113,34 @@ public partial class ContactInfo : Form
             MessageBox.Show("Error");
         }
 
-       
+
+    }
+
+    private void btnDeleteContact_Click(object sender, EventArgs e)
+    {
+        DialogResult dialogResult = MessageBox.Show("Are you shure delete your contact?", "Delete contact", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+        if (dialogResult == DialogResult.Yes)
+        {
+            try
+            {
+                using (var context = new ApplicationContext())
+                {
+                    var contact = context.Contacts.Single(c => c.Id == _tag);
+                    context.Contacts.Remove((Data.ContactData)contact);
+                    context.SaveChanges();
+                }
+                this.Close();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        else
+        {
+
+        }
     }
 }
 

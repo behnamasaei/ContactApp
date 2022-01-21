@@ -44,11 +44,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnDeleteContact = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnDeleteContact);
             this.groupBox1.Controls.Add(this.btnEdit);
             this.groupBox1.Controls.Add(this.btnSave);
             this.groupBox1.Controls.Add(this.btnCancel);
@@ -93,7 +95,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(126, 323);
+            this.btnCancel.Location = new System.Drawing.Point(46, 323);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 12;
@@ -205,6 +207,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Name: ";
             // 
+            // btnDeleteContact
+            // 
+            this.btnDeleteContact.Location = new System.Drawing.Point(127, 323);
+            this.btnDeleteContact.Name = "btnDeleteContact";
+            this.btnDeleteContact.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteContact.TabIndex = 15;
+            this.btnDeleteContact.Text = "Delete";
+            this.btnDeleteContact.UseVisualStyleBackColor = true;
+            this.btnDeleteContact.Click += new System.EventHandler(this.btnDeleteContact_Click);
+            // 
             // ContactInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -238,5 +250,6 @@
         private Button btnCancel;
         private Button btnSave;
         private Button btnEdit;
+        private Button btnDeleteContact;
     }
 }
